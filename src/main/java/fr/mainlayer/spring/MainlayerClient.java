@@ -125,6 +125,21 @@ public class MainlayerClient {
         return properties.getBaseUrl();
     }
 
+    /**
+     * Health check: verify API connectivity.
+     *
+     * @return true if the API is reachable and authenticated
+     */
+    public boolean healthCheck() {
+        try {
+            checkEntitlement("test_token", properties.getResourceId());
+            return true;
+        } catch (Exception e) {
+            log.warn("Health check failed: {}", e.getMessage());
+            return false;
+        }
+    }
+
     // ------------------------------------------------------------------
     // Internal helpers
     // ------------------------------------------------------------------

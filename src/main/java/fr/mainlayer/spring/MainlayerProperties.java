@@ -57,6 +57,33 @@ public class MainlayerProperties {
     @DefaultValue("true")
     private boolean enabled;
 
+    /**
+     * Comma-separated list of URL patterns to enforce payment on.
+     * Example: {@code /api/premium/**,/api/data/**}
+     */
+    private String protectedPaths;
+
+    /**
+     * Custom header name for entitlement tokens. Default: Authorization
+     */
+    @DefaultValue("Authorization")
+    private String entitlementHeader;
+
+    /**
+     * Cache configuration
+     */
+    private CacheConfig cache = new CacheConfig();
+
+    /**
+     * Retry configuration
+     */
+    private RetryConfig retry = new RetryConfig();
+
+    /**
+     * Logging configuration
+     */
+    private LoggingConfig logging = new LoggingConfig();
+
     // --- Getters and setters ---
 
     public String getApiKey() {
@@ -105,5 +132,130 @@ public class MainlayerProperties {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public String getProtectedPaths() {
+        return protectedPaths;
+    }
+
+    public void setProtectedPaths(String protectedPaths) {
+        this.protectedPaths = protectedPaths;
+    }
+
+    public String getEntitlementHeader() {
+        return entitlementHeader;
+    }
+
+    public void setEntitlementHeader(String entitlementHeader) {
+        this.entitlementHeader = entitlementHeader;
+    }
+
+    public CacheConfig getCache() {
+        return cache;
+    }
+
+    public void setCache(CacheConfig cache) {
+        this.cache = cache;
+    }
+
+    public RetryConfig getRetry() {
+        return retry;
+    }
+
+    public void setRetry(RetryConfig retry) {
+        this.retry = retry;
+    }
+
+    public LoggingConfig getLogging() {
+        return logging;
+    }
+
+    public void setLogging(LoggingConfig logging) {
+        this.logging = logging;
+    }
+
+    // --- Inner config classes ---
+
+    public static class CacheConfig {
+        @DefaultValue("true")
+        private boolean enabled;
+
+        @DefaultValue("60")
+        private int ttlSeconds;
+
+        public boolean isEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(boolean enabled) {
+            this.enabled = enabled;
+        }
+
+        public int getTtlSeconds() {
+            return ttlSeconds;
+        }
+
+        public void setTtlSeconds(int ttlSeconds) {
+            this.ttlSeconds = ttlSeconds;
+        }
+    }
+
+    public static class RetryConfig {
+        @DefaultValue("2")
+        private int maxAttempts;
+
+        @DefaultValue("100")
+        private int initialDelayMs;
+
+        @DefaultValue("2")
+        private double backoffMultiplier;
+
+        public int getMaxAttempts() {
+            return maxAttempts;
+        }
+
+        public void setMaxAttempts(int maxAttempts) {
+            this.maxAttempts = maxAttempts;
+        }
+
+        public int getInitialDelayMs() {
+            return initialDelayMs;
+        }
+
+        public void setInitialDelayMs(int initialDelayMs) {
+            this.initialDelayMs = initialDelayMs;
+        }
+
+        public double getBackoffMultiplier() {
+            return backoffMultiplier;
+        }
+
+        public void setBackoffMultiplier(double backoffMultiplier) {
+            this.backoffMultiplier = backoffMultiplier;
+        }
+    }
+
+    public static class LoggingConfig {
+        @DefaultValue("false")
+        private boolean enabled;
+
+        @DefaultValue("INFO")
+        private String level;
+
+        public boolean isEnabled() {
+            return enabled;
+        }
+
+        public void setEnabled(boolean enabled) {
+            this.enabled = enabled;
+        }
+
+        public String getLevel() {
+            return level;
+        }
+
+        public void setLevel(String level) {
+            this.level = level;
+        }
     }
 }
