@@ -15,7 +15,7 @@ import java.util.Map;
  * HTTP client for the Mainlayer payment API.
  *
  * <p>This client wraps Spring's {@link RestClient} to communicate with
- * {@code https://api.mainlayer.xyz}.  It handles authentication, request
+ * {@code https://api.mainlayer.fr}.  It handles authentication, request
  * serialisation, and translates API responses into typed result objects.
  *
  * <p>All operations are synchronous.  For reactive stacks inject the

@@ -1,6 +1,6 @@
 # Mainlayer Spring Boot Starter
 
-Spring Boot auto-configuration for [Mainlayer](https://mainlayer.xyz) — payment infrastructure for apps and AI agents.
+Spring Boot auto-configuration for [Mainlayer](https://mainlayer.fr) — payment infrastructure for apps and AI agents.
 
 Add one dependency and two properties, and your Spring Boot application gains:
 
@@ -49,7 +49,7 @@ mainlayer:
 |----------|---------|-------------|
 | `mainlayer.api-key` | *(required)* | Your Mainlayer API key |
 | `mainlayer.resource-id` | *(required)* | The resource to protect |
-| `mainlayer.base-url` | `https://api.mainlayer.xyz` | API base URL |
+| `mainlayer.base-url` | `https://api.mainlayer.fr` | API base URL |
 | `mainlayer.connect-timeout-ms` | `5000` | HTTP connect timeout |
 | `mainlayer.read-timeout-ms` | `10000` | HTTP read timeout |
 | `mainlayer.enabled` | `true` | Set to `false` to disable all payment checks |
@@ -122,6 +122,6 @@ export MAINLAYER_RESOURCE_ID=res_your_resource_id
 
 ## Links
 
-- [Mainlayer Documentation](https://docs.mainlayer.xyz)
-- [Mainlayer Dashboard](https://app.mainlayer.xyz)
+- [Mainlayer Documentation](https://docs.mainlayer.fr)
+- [Mainlayer Dashboard](https://app.mainlayer.fr)
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)

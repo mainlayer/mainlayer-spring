@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.bind.DefaultValue;
  * <pre>
  * spring.mainlayer.api-key=ml_live_...
  * spring.mainlayer.resource-id=res_abc123
- * spring.mainlayer.base-url=https://api.mainlayer.xyz   # optional override
+ * spring.mainlayer.base-url=https://api.mainlayer.fr   # optional override
  * spring.mainlayer.connect-timeout-ms=5000
  * spring.mainlayer.read-timeout-ms=10000
  * spring.mainlayer.enabled=true
@@ -35,7 +35,7 @@ public class MainlayerProperties {
      * Base URL for the Mainlayer API.  Override only when using a private
      * deployment or a staging environment.
      */
-    @DefaultValue("https://api.mainlayer.xyz")
+    @DefaultValue("https://api.mainlayer.fr")
     private String baseUrl;
 
     /**

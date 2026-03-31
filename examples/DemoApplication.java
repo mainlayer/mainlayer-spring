@@ -58,7 +58,7 @@ public class DemoApplication {
             return ResponseEntity.ok(Map.of(
                 "message", "Welcome! Paid endpoints require a valid Mainlayer entitlement.",
                 "paid_endpoint", "/api/data",
-                "docs", "https://docs.mainlayer.xyz"
+                "docs", "https://docs.mainlayer.fr"
             ));
         }
 

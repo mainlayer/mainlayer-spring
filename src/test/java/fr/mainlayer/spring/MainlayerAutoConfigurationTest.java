@@ -126,13 +126,13 @@ class MainlayerAutoConfigurationTest {
     }
 
     @Test
-    @DisplayName("Default base URL is https://api.mainlayer.xyz")
+    @DisplayName("Default base URL is https://api.mainlayer.fr")
     void defaultBaseUrlIsMainlayer() {
         contextRunner()
                 .withPropertyValues("mainlayer.api-key=ml_test_key")
                 .run(ctx -> {
                     MainlayerProperties props = ctx.getBean(MainlayerProperties.class);
-                    assertThat(props.getBaseUrl()).isEqualTo("https://api.mainlayer.xyz");
+                    assertThat(props.getBaseUrl()).isEqualTo("https://api.mainlayer.fr");
                 });
     }
 
